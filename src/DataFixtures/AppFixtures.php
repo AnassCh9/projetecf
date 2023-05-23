@@ -23,7 +23,7 @@ class AppFixtures extends Fixture
             $note = new Salle();
             $note->setIdSalle($i)
             ->setNom('Salle numéro ' . $i)
-            ->setCapacité( $i);
+            ->setCapacite( random_int(100, 1000));
             
             // Ajoute la note à la base de données
             $manager->persist($note);

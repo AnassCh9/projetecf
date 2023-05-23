@@ -47,7 +47,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Projetecf');
+            ->setTitle('Geestion des salles');
              
     }
 
@@ -59,10 +59,10 @@ class DashboardController extends AbstractDashboardController
     yield MenuItem::linkToCrud('Salles' , 'fas fa-plus', Salle::class);
     yield MenuItem::linkToCrud('Reservation' , 'fas fa-plus', Reservation::class);
     yield MenuItem::linkToCrud('Ergonomie' , 'fas fa-plus', Ergonomie::class);
-    // yield MenuItem::linkToCrud('Logiciels' , 'fas fa-plus', Logiciels::class);
-    // yield MenuItem::linkToCrud('Materiels' , 'fas fa-plus', Materiels::class);
+    yield MenuItem::linkToCrud('Logiciels' , 'fas fa-plus', Logiciels::class);
+    yield MenuItem::linkToCrud('Materiels' , 'fas fa-plus', Materiels::class);
 
-
+        
     //    yield MenuItem::section('Salles');
     //    yield MenuItem::section('Demandes en attente');
        
