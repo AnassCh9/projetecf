@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{# {{ oneSalle.title }} #}
+{% endblock %}
+
+{% block body %}
+
+	
+	<div class=" mt-5 text-center">
+	<h1 class="text-black">{{ oneSalle.nom }}</h1>
+	<p class="fs-4 text-black"> La capacité de la salle est de <b> {{ oneSalle.capacite }} personnes</b></p>
+	{# <p> Les plus de cette salles sont {{ oneSalle.ergonomie }},{{ oneSalle.materiels}} et {{ oneSalle.logiciels }}</p> #}
+
+	{# <hr class="text-white"> #}
+
+	</div>
+
+
+
+	<hr class="text-black">
+
+	<div class="text-center mb-2">
+		<a class="btn btn-primary" href={{ path('app_reservation') }}>Reserver une salle</a>
+	</div>
+	<div class="text-center mb-5">
+		<a class="btn btn-warning" href={{ path('app_salle') }}>Revenir à toutes les salles</a>
+	</div>
+
+
+{% endblock %}

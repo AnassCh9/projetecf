@@ -14,7 +14,9 @@
                         <div class="d-flex align-items-center">
                             <div class="p-5">
                                 <h2 class="fw-bolder">{{salle.nom}}</h2>
-                                <p><b>Capacité : </b>{{salle.capacité}}</p>
+                                <p><b>Capacité : </b>{{salle.capacite}}</p>
+
+                                <a href={{ path('app_one_salle', { id: salle.id } ) }} class="btn btn-dark">Voir la Salle</a>
                             </div>
                             {# <img class="img-fluid" src="/images/{{project.image}}" alt={{project.title}} /> #}
                         </div>

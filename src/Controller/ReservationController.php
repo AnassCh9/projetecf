@@ -2,42 +2,37 @@
 
 namespace App\Controller;
 
-use App\Repository\SalleRepository;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Reservation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class SallesController extends AbstractController
+class ReservationController extends AbstractController
 {
-    #[Route('/salle', name: 'app_salle', methods: ['GET'])]
-    public function index(SalleRepository $salles): Response
+    #[Route('/reservation', name: 'app_reservation')]
+    public function index(): Response
     {
-        return $this->render('salles/index.html.twig', [
-            'controller_name' => 'SallesController',
-            'salles' => $salles->findAll(),
-            // dd($projects->findAll())
+        return $this->render('reservation/index.html.twig', [
+            'controller_name' => 'ReservationController',
         ]);
     }
 
-    // Route qui affiche une Salle en particulier
-    #[Route('/salle/{id}', name: 'app_one_salle', methods: ['GET', 'POST'])]
-    public function show($id, SalleRepository $oneSalle): Response
-    {
-        // Affiche la salle demandée dans le template dédié
-        return $this->render('salles/single.html.twig', [
-            // Récupère la salle demandée par son id
-            'oneSalle' => $oneSalle->findOneBy(
-                ['id' => $id]
-            ),
-            'salle' => $oneSalle->findBy(
-                [],
-                ['id' => 'DESC'],
-                3)
-        ]);
-        
-    }
+    // Route qui permet de créer une nouvelle note
+    // #[Route('/reservation', name: 'app_reservation', methods: ['GET', 'POST'])]
+    // public function newReservation(Request $request)
+    // {
+    //     $oneReservation = new Reservation();
+
+    //     $oneReservation = $this->createForm(ReservationType::class, $oneReservation);
+
+    //     return $this->render('reservation/index.html.twig', [
+    //         // Formulaire de création de note
+    //         'form' => $oneReservation->createView()
+
+    //     ]);
+
+    // }
 
     // #[Route('rentsalle/{id}', name: 'rentsalle', methods: ['GET', 'POST'])]
     // public function updateSalle(
